@@ -136,19 +136,19 @@ article>*:nth-child(1) {
 }
 .slide-button {
     width: 5vw;
-    height: 50vh;
+    height: calc(50vh + 4px);
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    background: linear-gradient(hsla(209, 24%, 15%, 0.8), hsla(209, 24%, 15%, 0.8));
+    background-color: hsla(209, 24%, 15%, 0.8);
     font-weight: bold;
     font-size: 2em;
     cursor: pointer;
     transition: 0.5s;
 }
 .slide-button:hover {
-    background: linear-gradient(hsla(209, 24%, 15%, 0.8), #F1C40F, hsla(209, 24%, 15%, 0.8));
+    background-color: #F1C40F;
 }
 .slide li {
     width: calc(20vw - 1px - 2vh);
