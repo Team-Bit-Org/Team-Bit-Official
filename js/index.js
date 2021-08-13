@@ -48,3 +48,19 @@ window.addEventListener("scroll", () => {
         fixed = false;
     }
 })
+const slideButton = document.getElementsByClassName("slide-button");
+const slide = document.querySelector(".slide ul");
+const slideLength = document.querySelectorAll(".slide ul>li").length;
+let slideNumber = 0;
+slideButton[0].addEventListener("click", () => {
+    if (slideNumber != 0) {
+        slideNumber--;
+        slide.style.transform = `translateX(${-1 * slideNumber * slide.offsetWidth / slideLength}px)`;
+    }
+});
+slideButton[1].addEventListener("click", () => {
+    if (slideNumber != slideLength - 3) {
+        slideNumber++;
+        slide.style.transform = `translateX(${-1 * slideNumber * slide.offsetWidth / slideLength}px)`;
+    }
+});
