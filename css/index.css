@@ -15,7 +15,6 @@
 }
 html {
     scroll-behavior: smooth;
-    font-family: roboto;
 }
 body {
     font-size: 18px;
@@ -100,9 +99,9 @@ h1 {
 #introduction {
     height: 200vh;
     overflow: hidden;
+    font-family: roboto;
 }
 #introduction p {
-    color: #333333;
     width: 30em;
     font-size: 1.3em;
     margin-top: 1em;
@@ -172,6 +171,7 @@ article>*:nth-child(1) {
 h2 {
     font-family: pixellari;
     font-weight: 600;
+    font-size: 1.2em;
 }
 .profile-box {
     border: 2px solid black;
@@ -179,8 +179,82 @@ h2 {
     height: calc(41vh - 4px);
     padding: 1vh;
     border-radius: 2vh;
+    font-family: roboto;
 }
 .slide ul {
     display: inline-flex;
     transition: 1s;
+}
+#join p {
+    width: 30em;
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    font-size: 1.1em;
+    color: #333333;
+}
+#join h2 {
+    margin-top: 0.4em;
+    font-size: 1.2em;
+    margin-bottom: 0.3em;
+}
+footer {
+    font-size: 0.8em;
+    height: 11em;
+    background-color: hsla(209, 24%, 15%, 0.8);
+    width: 100%;
+    color: white;
+    padding-left: 5vw;
+}
+footer>img {
+    width: 3em;
+    height: 3em;
+}
+footer>ul {
+    display: flex;
+}
+footer>ul>li {
+    margin-right: 5vw;
+}
+#join-main {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#link-cover {
+    display: flex;
+    width: 100%;
+    padding: 1em;
+    background-color: #CCCCCC;
+    border-radius: 1em;
+    align-items: center;
+    justify-content: space-between;
+}
+#link-cover img {
+    width: 5em;
+    height: 5em;
+    transform: translate(-1em, -1em);
+}
+#link-cover>p {
+    background-color: #008800;
+    color: white;
+    width: 3em;
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+#link-cover>h2 {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+}
+#link-cover>h2>p {
+    width: 3em;
+    height: 3em;
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin-right: 1em;
+    margin-bottom: 0;
 }
