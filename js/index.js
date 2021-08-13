@@ -5,11 +5,16 @@ const headerMenu = document.querySelectorAll("header>ul>li");
 const logoCanvas = document.getElementById("logo3");
 const logoCtx = logoCanvas.getContext("2d");
 let logoVideo = []
+let searchParams = new URLSearchParams(window.location.search);
+let menuNumber = 0;
+let slideNumber = 0;
+const slideButton = document.getElementsByClassName("slide-button");
+const slide = document.querySelector(".slide ul");
+const slideLength = document.querySelectorAll(".slide ul>li").length;
 header.addEventListener("click", (e) => {
-    let menuNumber = headerMenu.indexOf(e.target);
+    menuNumber = headerMenu.indexOf(e.target);
     if (menuNumber > 0) {
         window.scrollTo(0, logoCanvas.offsetHeight * menuNumber);
-        let searchParams = new URLSearchParams(window.location.search);
         searchParams.set("foo", "bar");
         if (window.location.href.includes("?page=")) {
             console.log(menuNumber)
@@ -31,7 +36,12 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     window.scrollTo(0, 0);
     if (window.location.href.includes("?page=")) {
-        window.scrollTo(0, logoCanvas.offsetHeight * Number(window.location.href[window.location.href.indexOf("?page=") + 6]));
+        menuNumber = Number(window.location.href[window.location.href.indexOf("?page=") + 6])
+        window.scrollTo(0, logoCanvas.offsetHeight * menuNumber);
+    }
+    if (window.location.href.includes("&member=")) {
+        slideNumber = Number(window.location.href.match(/member=[0-9]+/i)[0].slice(7));
+        slide.style.transform = `translateX(${-1 * slideNumber * slide.offsetWidth / slideLength}px)`;
     }
     console.log("Hello, World!");
 })
@@ -48,19 +58,31 @@ window.addEventListener("scroll", () => {
         fixed = false;
     }
 })
-const slideButton = document.getElementsByClassName("slide-button");
-const slide = document.querySelector(".slide ul");
-const slideLength = document.querySelectorAll(".slide ul>li").length;
-let slideNumber = 0;
 slideButton[0].addEventListener("click", () => {
-    if (slideNumber != 0) {
+    if (slideNumber > 0) {
         slideNumber--;
         slide.style.transform = `translateX(${-1 * slideNumber * slide.offsetWidth / slideLength}px)`;
     }
+    searchParams.set("foo", "bar");
+    if (window.location.href.includes("&member=")) {
+        history.pushState(null, '', window.location.href.replace(/\?page=[0-9]\&member=[0-9]+/i, `?page=2&member=${slideNumber}`));
+    } else if (window.location.href.includes("?page=")) {
+        history.pushState(null, '', window.location.href.replace(/\?page=[0-9]/i, `?page=2&member=${slideNumber}`));
+    } else {
+        history.pushState(null, '', window.location.href + `?page=2&member=${slideNumber}`)
+    }
 });
 slideButton[1].addEventListener("click", () => {
-    if (slideNumber != slideLength - 3) {
+    if (slideNumber < slideLength - 3) {
         slideNumber++;
         slide.style.transform = `translateX(${-1 * slideNumber * slide.offsetWidth / slideLength}px)`;
+    }
+    searchParams.set("foo", "bar");
+    if (window.location.href.includes("&member=")) {
+        history.pushState(null, '', window.location.href.replace(/\?page=[0-9]\&member=[0-9]+/i, `?page=2&member=${slideNumber}`));
+    } else if (window.location.href.includes("?page=")) {
+        history.pushState(null, '', window.location.href.replace(/\?page=[0-9]/i, `?page=2&member=${slideNumber}`));
+    } else {
+        history.pushState(null, '', window.location.href + `?page=2&member=${slideNumber}`)
     }
 });
