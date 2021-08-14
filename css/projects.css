@@ -95,3 +95,37 @@ article>li>div>h2 {
     font-size: 1.4em;
     font-family: pixellari;
 }
+@media screen and (max-width: 1000px) {
+    body {
+        font-size: 25px;
+    }
+    #logo>div {
+        width: 2em;
+        height: 1.8em;
+        margin-right: 1em;
+    }
+    #logo {
+        justify-content: space-between;
+        width: 100%;
+        margin-left: 0;
+    }
+    #logo img {
+        margin-left: 1em;
+        width: 2em;
+        height: 2em;
+    }
+    header {
+        font-size: 2.5em;
+    }
+    #logo>p {
+        margin-left: 0;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    article li {
+        width: 80vw;
+    }
+}

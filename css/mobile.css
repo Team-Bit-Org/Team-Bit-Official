@@ -12,7 +12,6 @@
         flex-direction: column;
         font-size: 2.5em;
         height: auto;
-        background-color: hsla(209, 24%, 15%, 0.8);
         justify-content: flex-start;
     }
     #header-left {
@@ -36,20 +35,19 @@
     .phone-linebreak {
         display: block;
     }
-    #logo>img:not(#logo-image) {
-        display: inline;
-        margin-right: 1em;
-    }
     #logo {
         justify-content: space-between;
         width: 100%;
         margin-left: 0;
+        align-items: center;
     }
     #logo>p {
         margin-left: 0;
     }
     #logo-image {
         margin-left: 1em;
+        width: 2em;
+        height: 2em;
     }
     #menu-icon {
         width: 2em;
@@ -97,5 +95,31 @@
     }
     .profile-box {
         font-size: 2em;
+    }
+    #project li:not(#project li:nth-child(1)) {
+        display: none !important;
+    }
+    #project li:nth-child(1) {
+        width: 98%;
+        font-size: 2em;
+    }
+    #project>p {
+        font-size: 2em;
+    }
+    #project>ul {
+        height: calc(60vh + 4em);
+    }
+    #join-main {
+        font-size: 1.5em;
+        width: 80%;
+    }
+    #link-cover {
+        width: calc(100% - 2em);
+    }
+    footer {
+        font-size: 1.5em;
+    }
+    header:not(.opened) #logo {
+        height: 12vh;
     }
 }
