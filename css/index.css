@@ -309,7 +309,6 @@ footer>ul>li {
     flex: 1;
     cursor: pointer;
     background-position: center;
-    background-size: 200%;
 }
 #project>ul>li>div {
     flex: 0.4;

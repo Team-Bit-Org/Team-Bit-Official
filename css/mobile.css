@@ -100,7 +100,7 @@
         display: none !important;
     }
     #project li:nth-child(1) {
-        width: 98%;
+        width: 60%;
         font-size: 2em;
     }
     #project>p {
@@ -108,6 +108,8 @@
     }
     #project>ul {
         height: calc(60vh + 4em);
+        width: 100%;
+        justify-content: center;
     }
     #join-main {
         font-size: 1.5em;
