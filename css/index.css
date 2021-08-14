@@ -21,7 +21,6 @@ body {
     user-select: none;
 }
 body::-webkit-scrollbar {
-    width: 10px;
     display: none;
 }
 header {
@@ -51,6 +50,9 @@ header>ul>li {
 }
 #header-left>li {
     transition: inherit;
+    cursor: pointer;
+}
+#header-right>li {
     cursor: pointer;
 }
 #header-left>li:not(#logo):hover {
@@ -156,11 +158,13 @@ article>*:nth-child(1) {
     flex-direction: column;
     align-items: center;
 }
-.slide li>img {
+.profile-image {
     width: 10vh;
     height: 10vh;
     border-radius: 100%;
     z-index: 1;
+    background-position: center;
+    background-size: 10vh;
 }
 .slide h2 {
     text-align: center;
@@ -180,29 +184,31 @@ h2 {
     padding: 1vh;
     border-radius: 2vh;
     font-family: roboto;
+    user-select: text;
 }
 .slide ul {
     display: inline-flex;
     transition: 1s;
 }
-#join>p {
+#join-main>p {
     width: 100%;
     font-size: 1.3em;
     margin-bottom: 0.5em;
     text-align: left;
     font-size: 1.1em;
     color: #333333;
-    margin-left: 1em;
+    user-select: text;
 }
 #join-main>ol>li {
     width: 100%;
     font-size: 1.3em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     font-size: 1.1em;
     color: #333333;
     line-height: 1.2em;
     list-style-type: space-counter;
-    margin-left: 2em;
+    margin-left: 1em;
+    user-select: text;
 }
 #join-main>ol>li:nth-child(2) {
     margin-bottom: 0;
@@ -245,11 +251,7 @@ footer>ul>li {
     align-items: center;
     justify-content: space-between;
     margin-top: 1em;
-}
-#link-cover img {
-    width: 5em;
-    height: 5em;
-    transform: translate(-1em, -1em);
+    cursor: pointer;
 }
 #link-cover>p {
     background-color: #3BA55D;
@@ -271,4 +273,63 @@ footer>ul>li {
     border-radius: 0.5em;
     margin-right: 1em;
     margin-bottom: 0;
+    background-image: url(../img/teambit.png);
+    background-size: 6em;
+    background-position: center;
+}
+#project>ul {
+    width: 100%;
+    margin-top: 1em;
+    height: calc(60vh + 2em);
+    display: flex;
+}
+#project>ul>li {
+    width: 23vw;
+    height: 60vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border-radius: 0.3em;
+    background-color: #F2F3F5;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+.project-image {
+    flex: 1;
+    cursor: pointer;
+    background-position: center;
+    background-size: 200%;
+}
+#project>ul>li>div {
+    flex: 0.4;
+    user-select: text;
+    overflow-y: scroll;
+    margin-top: 0.5em;
+}
+#project>ul>li>div::-webkit-scrollbar {
+    width: 5px;
+}
+#project>ul>li>div::-webkit-scrollbar-track {
+    width: 5px;
+}
+#project>ul>li>div::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #F1C40F;
+    border-radius: 2px;
+}
+#project>ul>li>div>p {
+    font-size: 0.9em;
+}
+#project>ul>li>div>h2 {
+    font-size: 1.4em;
+}
+#project>p {
+    background-color: #3BA55D;
+    color: white;
+    width: 4em;
+    padding: 0.6em 1.53em;
+    text-align: center;
+    border-radius: 0.5em;
+    margin-top: 2vh;
+    cursor: pointer;
 }
