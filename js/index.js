@@ -12,7 +12,7 @@ const slideButton = document.getElementsByClassName("slide-button");
 const slide = document.querySelector(".slide ul");
 const slideLength = document.querySelectorAll(".slide ul>li").length;
 header.addEventListener("click", (e) => {
-    menuNumber = headerMenu.indexOf(e.target);
+    menuNumber = headerMenu.indexOf(e.target) + 1;
     if (menuNumber > 0) {
         window.scrollTo(0, logoCanvas.offsetHeight * menuNumber);
         searchParams.set("foo", "bar");
@@ -84,5 +84,16 @@ slideButton[1].addEventListener("click", () => {
         history.pushState(null, '', window.location.href.replace(/\?page=[0-9]/i, `?page=2&member=${slideNumber}`));
     } else {
         history.pushState(null, '', window.location.href + `?page=2&member=${slideNumber}`)
+    }
+});
+const menuButton = document.getElementById("menu-icon");
+let menuOpened = true;
+menuButton.addEventListener("click", () => {
+    if (menuOpened) {
+        header.classList.remove("opened");
+        menuOpened = false;
+    } else {
+        header.classList.add("opened");
+        menuOpened = true;
     }
 });

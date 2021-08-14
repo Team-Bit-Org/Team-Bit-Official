@@ -10,6 +10,9 @@
   font-weight: 800;
   src: url('../fonts/Roboto-Thin.ttf') format('truetype');
 }
+a {
+    color: white;
+}
 .loading {
     display: none;
 }
@@ -55,12 +58,14 @@ header>ul>li {
 #header-right>li {
     cursor: pointer;
 }
-#header-left>li:not(#logo):hover {
+#header-left>li:hover {
     transform: scale(1.2);
 }
 #logo {
     display: flex;
     align-items: center;
+    margin-left: 2.5em;
+    cursor: pointer;
 }
 #logo>p {
     font-family: pixellari;
@@ -69,7 +74,7 @@ header>ul>li {
     padding-top: 0.35em;
     color: #F1C40F;
 }
-#logo>img {
+#logo-image {
     width: 3em;
     height: 3em;
 }
@@ -102,6 +107,8 @@ h1 {
     height: 200vh;
     overflow: hidden;
     font-family: roboto;
+    position: relative;
+    z-index: -1;
 }
 #introduction p {
     width: 30em;
@@ -134,6 +141,7 @@ article>*:nth-child(1) {
     border: 2px solid black;
     height: 50vh;
     overflow: hidden;
+    z-index: -1;    
 }
 .slide-button {
     width: 5vw;

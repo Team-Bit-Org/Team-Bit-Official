@@ -7,18 +7,30 @@
         <meta property="og:image" content="./img/teambit6.png">
         <meta property="og:description" content="새로운 것들을 만들어 혁신적인 미래를 만들어가다, Team.Bit">
         <meta property="og:title" content="Team.Bit">
+        <meta property="og:type" content="website">
+        <meta name="theme-color" content="#FF0000">
+        <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Team.Bit">
         <link rel="shortcut icon" href="./img/teambit7.ico" type="image/x-icon">
         <title>Team.Bit</title>
         <link rel="stylesheet" href="./css/reset.css">
         <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/mobile.css">
     </head>
     <!-- load1 -->
     <body class="loading">
         <div class="fixed">
             <header>
+                <li id="logo">
+                    <img id="logo-image" src="./img/teambit3.png" alt="logo">
+                    <p onclick="window.scrollTo(0, 0);">Team.Bit</p>
+                    <div id="menu-icon" class="phone-linebreak">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </li>
                 <ul id="header-left" class="preload">
-                    <li id="logo" onclick="window.scrollTo(0, 0);"><img src="./img/teambit3.png" alt="logo"><p>Team.Bit</p></li>
                     <li>소개</li>
                     <li>멤버</li>
                     <li>프로젝트</li>
@@ -32,7 +44,7 @@
         <main>
             <article id="introduction">
                 <img src="./img/teambit4.png" alt="Team.Bit" id="logo2">
-                <h1>새로운 것들을 만들어 혁신적인 미래를 만들어갑니다.</h1>
+                <h1>새로운 것들을 만들어 <br class="phone-linebreak">혁신적인 미래를 만들어갑니다.</h1>
                 <p>scroll down to start</p>
                 <canvas id="logo3" width="1900" height="1080"></canvas>
             </article>
