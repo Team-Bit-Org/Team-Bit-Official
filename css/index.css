@@ -98,6 +98,8 @@ h1 {
     font-size: 2em;
     font-weight: bold;
     font-family: pixellari;
+    text-align: center;
+    line-height: 1.3em;
 }
 .fixed {
     position: fixed;
@@ -141,7 +143,7 @@ article>*:nth-child(1) {
     border: 2px solid black;
     height: 50vh;
     overflow: hidden;
-    z-index: -1;    
+    z-index: -1;
 }
 .slide-button {
     width: 5vw;
@@ -193,6 +195,7 @@ h2 {
     border-radius: 2vh;
     font-family: roboto;
     user-select: text;
+    width: calc(20vw - 1px - 4vh);
 }
 .slide ul {
     display: inline-flex;

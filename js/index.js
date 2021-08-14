@@ -22,6 +22,8 @@ header.addEventListener("click", (e) => {
         } else {
             history.pushState(null, '', window.location.href + "?page=" + menuNumber.toString());
         }
+        header.classList.remove("opened");
+        menuOpened = false;
     }
 });
 window.addEventListener("DOMContentLoaded", () => {
@@ -87,7 +89,7 @@ slideButton[1].addEventListener("click", () => {
     }
 });
 const menuButton = document.getElementById("menu-icon");
-let menuOpened = true;
+let menuOpened = false;
 menuButton.addEventListener("click", () => {
     if (menuOpened) {
         header.classList.remove("opened");

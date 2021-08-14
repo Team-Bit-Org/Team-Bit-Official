@@ -80,4 +80,22 @@
     .opened>ul>li {
         margin-bottom: 1em;
     }
+    #introduction>p {
+        font-size: 2em;
+    }
+    article:not(#introduction)>h1 {
+        font-size: 3em;
+    }
+    .slide li {
+        width: calc(60vw - 2vh - 4px);
+    }
+    .slide ul {
+        margin-left: calc(-60vw + 4px);
+    }
+    .profile-box {
+        width: calc(60vw - 3vh - 4px);
+    }
+    .profile-box {
+        font-size: 2em;
+    }
 }
