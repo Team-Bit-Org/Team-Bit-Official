@@ -4,12 +4,6 @@
   font-weight: 800;
   src: url('../fonts/Pixellari.ttf') format('truetype');
 }
-@font-face {
-  font-family: 'roboto';
-  font-style: normal;
-  font-weight: 800;
-  src: url('../fonts/Roboto-Thin.ttf') format('truetype');
-}
 a {
     color: white;
 }
@@ -108,7 +102,9 @@ h1 {
 #introduction {
     height: 200vh;
     overflow: hidden;
-    font-family: roboto;
+    font-weight: lighter;
+    color: #333333;
+    line-height: 1.2em;
     position: relative;
     z-index: -1;
 }
@@ -194,7 +190,9 @@ h2 {
     height: calc(41vh - 4px);
     padding: 1vh;
     border-radius: 2vh;
-    font-family: roboto;
+    font-weight: lighter;
+    line-height: 1.2em;
+    color: #333333;
     user-select: text;
     width: calc(20vw - 1px - 4vh);
 }
