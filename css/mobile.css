@@ -5,6 +5,10 @@
     display: none;
 }
 @media screen and (max-width: 1000px) {
+    img {
+        width: 100px;
+        height: 100px;
+    }
     body {
         font-size: 25px;
     }

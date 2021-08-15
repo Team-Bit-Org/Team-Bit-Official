@@ -4,6 +4,9 @@
   font-weight: 800;
   src: url('../fonts/Pixellari.ttf') format('truetype');
 }
+p {
+     font-family: 'Spoqa Han Sans Neo'; 
+}
 a {
     color: white;
 }
