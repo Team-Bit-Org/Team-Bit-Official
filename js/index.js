@@ -41,10 +41,6 @@ window.addEventListener("DOMContentLoaded", () => {
         menuNumber = Number(window.location.href[window.location.href.indexOf("?page=") + 6])
         window.scrollTo(0, logoCanvas.offsetHeight * menuNumber);
     }
-    if (window.location.href.includes("&member=")) {
-        slideNumber = Number(window.location.href.match(/member=[0-9]+/i)[0].slice(7));
-        slide.style.transform = `translateX(${-1 * slideNumber * slide.offsetWidth / slideLength}px)`;
-    }
     console.log("Hello, World!");
 })
 let fixed = true;
@@ -65,27 +61,11 @@ slideButton[0].addEventListener("click", () => {
         slideNumber--;
         slide.style.transform = `translateX(${-1 * slideNumber * slide.offsetWidth / slideLength}px)`;
     }
-    searchParams.set("foo", "bar");
-    if (window.location.href.includes("&member=")) {
-        history.pushState(null, '', window.location.href.replace(/\?page=[0-9]\&member=[0-9]+/i, `?page=2&member=${slideNumber}`));
-    } else if (window.location.href.includes("?page=")) {
-        history.pushState(null, '', window.location.href.replace(/\?page=[0-9]/i, `?page=2&member=${slideNumber}`));
-    } else {
-        history.pushState(null, '', window.location.href + `?page=2&member=${slideNumber}`)
-    }
 });
 slideButton[1].addEventListener("click", () => {
-    if (slideNumber < slideLength - 3) {
+    if (slideNumber < ((document.body.offsetWidth > 1000) ? (slideLength - 3) : (slideLength - 1))) {
         slideNumber++;
         slide.style.transform = `translateX(${-1 * slideNumber * slide.offsetWidth / slideLength}px)`;
-    }
-    searchParams.set("foo", "bar");
-    if (window.location.href.includes("&member=")) {
-        history.pushState(null, '', window.location.href.replace(/\?page=[0-9]\&member=[0-9]+/i, `?page=2&member=${slideNumber}`));
-    } else if (window.location.href.includes("?page=")) {
-        history.pushState(null, '', window.location.href.replace(/\?page=[0-9]/i, `?page=2&member=${slideNumber}`));
-    } else {
-        history.pushState(null, '', window.location.href + `?page=2&member=${slideNumber}`)
     }
 });
 const menuButton = document.getElementById("menu-icon");
